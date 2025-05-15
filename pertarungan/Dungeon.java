@@ -106,3 +106,49 @@ public class Dungeon {
             System.out.println("Musuh menyerang Anda dan memberikan " + damage + " damage.");
         }
     }
+
+    private void gunakanSP(User user, Musuh musuh) {
+        Persona p = user.getPersona();
+        String skillName = user.getSkill();
+        Skill skill = SkillFactory.getSkill(skillName);
+        
+        if (p.getSp() >= 10) {
+            String target = musuh.getNama();
+            int kekuatan = 5 + (int)(Math.random() * 10); 
+            
+            if (skillName.equals("api")) {
+                Api apiSkill = (Api) skill;
+                apiSkill.gunakanSkill(target, kekuatan);
+            } else if (skillName.equals("air")) {
+                Air airSkill = (Air) skill;
+                airSkill.gunakanSkill(target, kekuatan);
+            } else if (skillName.equals("tanah")) {
+                Tanah tanahSkill = (Tanah) skill;
+                tanahSkill.gunakanSkill(target, kekuatan);
+            }
+            
+            int baseDamage = 30;
+            int finalDamage = baseDamage;
+            
+            if (skillName.equals("api")) {
+                finalDamage += 5; 
+                System.out.println("Api membakar musuh dan memberikan damage tambahan!");
+            } else if (skillName.equals("air")) {
+                p.tambahHp(5); 
+                System.out.println("Air menyegarkan dan memulihkan 5 HP!");
+            } else if (skillName.equals("tanah")) {
+                finalDamage -= 5;
+                p.tambahSp(3);
+                System.out.println("Tanah mengembalikan 3 SP kepada Anda!");
+            }
+            
+            musuh.kurangHp(finalDamage);
+            p.kurangSp(10);
+        
+            System.out.println("Anda menggunakan SP dan memberikan " + finalDamage + " damage ke musuh.");
+        } else {
+            System.out.println("SP tidak cukup untuk menyerang.");
+        }
+        
+        System.out.println(ACTION_SEPARATOR); 
+    }
