@@ -152,3 +152,31 @@ public class Dungeon {
         
         System.out.println(ACTION_SEPARATOR); 
     }
+
+    private Hadiah hadiahRandom() {
+        double rand = Math.random();
+        if (rand < 0.5) {
+            return new HadiahHP();
+        } else if (rand < 0.8) {
+            return new HadiahSP();
+        } else {
+         
+            return new HadiahSP(10); 
+        }
+    }
+
+    private void tampilkanStatus() {
+        System.out.println("\nStatus terkini:");
+        System.out.println(user.getPersona());
+        System.out.println(musuh);
+        System.out.println(ACTION_SEPARATOR); 
+    }
+    
+    public User getUser() {
+        return user;
+    }
+    
+    public void tampilkanProfilPengguna() {
+        user.tampilkanProfil();
+    }
+}
