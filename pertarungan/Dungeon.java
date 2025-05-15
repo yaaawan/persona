@@ -33,3 +33,18 @@ public class Dungeon {
         this.user = user;
         this.musuh = new Musuh("Goblin", randomSkill());
     }
+    private String randomSkill() {
+        String[] skills = {"api", "air", "tanah"};
+        int idx = (int) (Math.random() * skills.length);
+        return skills[idx];
+    }
+
+    public void mulaiDungeon() {
+        System.out.println("Petualangan dimulai!");
+        System.out.println(musuh);
+        System.out.println(BATTLE_SEPARATOR);
+
+        if (user.getPersona().getHp() <= 0) {
+            System.out.println(ANSI_RED + "HP Anda telah habis! Tidak dapat memulai pertarungan." + ANSI_RESET);
+            return; 
+        }
