@@ -12,3 +12,15 @@ public class HadiahHP extends Hadiah {
         super("Hadiah HP (" + jumlahHP + ")");
         this.tambahanHP = jumlahHP;
     }
+    
+    @Override
+    public void berikanHadiah(User user) {
+        user.tambahHP(tambahanHP);
+        System.out.println("Selamat! Anda mendapatkan tambahan HP sebanyak " + tambahanHP);
+        user.tambahRiwayatHadiah(this);
+    }
+    
+    public int getTambahanHP() {
+        return tambahanHP;
+    }
+}
