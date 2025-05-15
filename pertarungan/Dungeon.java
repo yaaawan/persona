@@ -48,3 +48,33 @@ public class Dungeon {
             System.out.println(ANSI_RED + "HP Anda telah habis! Tidak dapat memulai pertarungan." + ANSI_RESET);
             return; 
         }
+        
+        boolean userTurn = true;
+        while (user.getPersona().getHp() > 0 && musuh.getHp() > 0) {
+            if (userTurn) {
+                System.out.println("\nGiliran Anda bertarung.");
+                System.out.println("1. Serang");
+                System.out.println("2. Gunakan SP");
+                System.out.print("Pilih aksi: ");
+                String aksi = scanner.nextLine();
+
+                if ("1".equals(aksi)) {
+                    serang(user, musuh);
+                } else if ("2".equals(aksi)) {
+                    gunakanSP(user, musuh);
+                } else {
+                    System.out.println("Aksi tidak dikenali, giliran hilang.");
+                }
+                System.out.println(TURN_SEPARATOR);
+            } else {
+                System.out.println("\nGiliran musuh menyerang...");
+                serang(musuh, user.getPersona());
+                System.out.println(TURN_SEPARATOR); 
+                
+                if (user.getPersona().getHp() <= 0) {
+                    break;
+                }
+            }
+            userTurn = !userTurn;
+            tampilkanStatus();
+        }
