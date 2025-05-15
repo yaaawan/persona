@@ -78,3 +78,31 @@ public class Dungeon {
             userTurn = !userTurn;
             tampilkanStatus();
         }
+
+        if (user.getPersona().getHp() <= 0) {
+            System.out.println(ANSI_RED + "Anda kalah. Game over." + ANSI_RESET);
+        } else {
+            System.out.println(ANSI_YELLOW + ANSI_BOLD + "Selamat, Anda menang!" + ANSI_RESET);
+            Hadiah hadiah = hadiahRandom();
+            hadiah.berikanHadiah(user);
+            System.out.println("Anda mendapatkan hadiah: " + hadiah);
+            
+    
+            System.out.println("\nStatus setelah mendapatkan hadiah:");
+            user.tampilkanProfil();
+        }
+        System.out.println(BATTLE_SEPARATOR); 
+    }
+
+    private void serang(Object attacker, Object defender) {
+        int damage = 15;
+        if (attacker instanceof User) {
+            Musuh musuh = (Musuh) defender;
+            musuh.kurangHp(damage);
+            System.out.println("Anda menyerang " + musuh.getNama() + " dan memberikan " + damage + " damage.");
+        } else if (attacker instanceof Musuh) {
+            Persona persona = (Persona) defender;
+            persona.kurangHp(damage);
+            System.out.println("Musuh menyerang Anda dan memberikan " + damage + " damage.");
+        }
+    }
