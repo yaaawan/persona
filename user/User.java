@@ -63,3 +63,15 @@ public class User {
         }
     }
 
+        public void tampilkanProfil() {
+        System.out.println("=== PROFIL PENGGUNA ===");
+        System.out.println("Nama User: " + nama);
+        System.out.println(persona.toString());
+        System.out.println("Total SP dari Hadiah: " + totalHadiahSP);
+        System.out.println("======================");
+        
+        System.out.println("\nRiwayat Hadiah:");
+        tampilkanRiwayatHadiah();
+    }
+}
+
