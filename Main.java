@@ -16,3 +16,12 @@ public class Main {
     private static final String ANSI_PURPLE = "\u001B[35m";
     private static final String ANSI_CYAN = "\u001B[36m";
     private static final String ANSI_BOLD = "\u001B[1m";
+
+    private static final String SKILL_API = "api";
+    private static final String SKILL_AIR = "air";
+    private static final String SKILL_TANAH = "tanah";
+
+    private static final String FORMAT_PROMPT = "%-30s : ";
+    private static final String FORMAT_INFO = "%-20s : %s";
+
+    private static final Scanner scanner = new Scanner(System.in);
