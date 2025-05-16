@@ -170,3 +170,32 @@ public class Main {
                 return;
             }
 
+            System.out.println(HORIZONTAL_LINE);
+            System.out.println("Pilih aksi:");
+            System.out.println("1. Bertarung");
+            System.out.println("2. Lihat Profil");
+            System.out.println("3. Lihat Riwayat Hadiah");
+            System.out.println("4. Keluar");
+            System.out.print("Pilihan Anda: ");
+            String aksi = scanner.nextLine().trim();
+
+            switch (aksi) {
+                case "1":
+                    bertarung(user);
+                    break;
+                case "2":
+                    tampilkanProfil(user);
+                    break;
+                case "3":
+                    tampilkanRiwayat(user);
+                    break;
+                case "4":
+                    exit = true;
+                    break;
+                default:
+                    System.out.println(ANSI_RED + "Pilihan tidak valid, silakan coba lagi.\n" + ANSI_RESET);
+            }
+        }
+    }
+
+
