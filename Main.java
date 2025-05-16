@@ -93,3 +93,53 @@ public class Main {
 
         return user;
     }
+
+    private static String promptSkillInput() {
+
+        System.out.println("--------------------------------------------");
+        System.out.println("Pilih skill: ");
+        System.out.println("--------------------------------------------");
+        System.out.println("1. " + ANSI_RED + "Api" + ANSI_RESET);
+        System.out.println("2. " + ANSI_BLUE + "Air" + ANSI_RESET);
+        System.out.println("3. " + ANSI_GREEN + "Tanah" + ANSI_RESET);
+        System.out.print("Pilihan: ");
+
+        String input = scanner.nextLine().trim();
+        String skillInput;
+
+        try {
+            int pilihan = Integer.parseInt(input);
+            switch (pilihan) {
+                case 1:
+                    skillInput = SKILL_API;
+                    break;
+                case 2:
+                    skillInput = SKILL_AIR;
+                    break;
+                case 3:
+                    skillInput = SKILL_TANAH;
+                    break;
+                default:
+                    System.out.println(ANSI_RED + "Pilihan tidak valid. Default ke skill Api." + ANSI_RESET);
+                    skillInput = SKILL_API;
+                    break;
+            }
+        } catch (NumberFormatException e) {
+            skillInput = input.toLowerCase();
+            if (!skillInput.equals(SKILL_API) && !skillInput.equals(SKILL_AIR) && !skillInput.equals(SKILL_TANAH)) {
+                System.out.println(ANSI_RED + "Skill tidak valid. Default ke skill Api." + ANSI_RESET);
+                skillInput = SKILL_API;
+            }
+        }
+
+        System.out.print("Skill dipilih: ");
+        if (skillInput.equals(SKILL_API)) {
+            System.out.println(ANSI_RED + "API" + ANSI_RESET);
+        } else if (skillInput.equals(SKILL_AIR)) {
+            System.out.println(ANSI_BLUE + "AIR" + ANSI_RESET);
+        } else {
+            System.out.println(ANSI_GREEN + "TANAH" + ANSI_RESET);
+        }
+
+        return skillInput;
+    }
