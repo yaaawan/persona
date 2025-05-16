@@ -143,3 +143,30 @@ public class Main {
 
         return skillInput;
     }
+
+    private static void printUserInfo(User user) {
+        System.out.printf(FORMAT_INFO + "\n", "Nama User", ANSI_YELLOW + user.getNama() + ANSI_RESET);
+        System.out.printf(FORMAT_INFO + "\n", "Nama Persona", ANSI_YELLOW + user.getPersona().getNama() + ANSI_RESET);
+
+        String skill = user.getSkill();
+        String skillColored;
+        if (skill.equals(SKILL_API))
+            skillColored = ANSI_RED + skill.toUpperCase() + ANSI_RESET;
+        else if (skill.equals(SKILL_AIR))
+            skillColored = ANSI_BLUE + skill.toUpperCase() + ANSI_RESET;
+        else
+            skillColored = ANSI_GREEN + skill.toUpperCase() + ANSI_RESET;
+
+        System.out.printf(FORMAT_INFO + "\n", "Skill", skillColored);
+        System.out.printf(FORMAT_INFO + "\n", "HP (Nyawa)", String.valueOf(user.getPersona().getHp()));
+        System.out.printf(FORMAT_INFO + "\n", "SP (Kekuatan Persona)", String.valueOf(user.getPersona().getSp()));
+    }
+
+    private static void gameLoop(User user) {
+        boolean exit = false;
+        while (!exit) {
+            if (user.getPersona().getHp() <= 0) {
+                System.out.println(ANSI_RED + ANSI_BOLD + "\nHP Anda telah habis! GAME OVER!" + ANSI_RESET);
+                return;
+            }
+
