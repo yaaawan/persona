@@ -25,3 +25,29 @@ public class Main {
     private static final String FORMAT_INFO = "%-20s : %s";
 
     private static final Scanner scanner = new Scanner(System.in);
+
+    
+    public static void main(String[] args) {
+        try {
+            printUserGuide();
+
+            if (!promptPlayGame()) {
+                System.out.println(ANSI_CYAN + "\nTerima kasih sudah mampir. Sampai jumpa!" + ANSI_RESET);
+                return;
+            }
+
+            User user = createUserProfile();
+
+            System.out.println(ANSI_GREEN + ANSI_BOLD + "\n>> PERMAINAN DIMULAI <<" + ANSI_RESET + "\n");
+
+            gameLoop(user);
+
+            System.out.println(ANSI_YELLOW + "\nTerima kasih sudah bermain!" + ANSI_RESET);
+
+        } catch (Exception e) {
+            printErrorMessage("Terjadi kesalahan: " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            scanner.close();
+        }
+    }
