@@ -7,3 +7,11 @@ public class SkillFactory {
                 return new Api();
             case "air":
                 return new Air();
+            case "tanah":
+                return new Tanah();
+            default:
+                System.out.println("Skill tidak dikenali, default ke Api.");
+                return new Api();
+        }
+    }
+}
