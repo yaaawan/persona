@@ -24,7 +24,26 @@ Fitur ini memungkinkan pengguna keluar dari permainan dengan aman. Sistem akan m
 
 ## Struktur Folder
 
-(assets/StrukturFolder.png)
+PERSONA/
+├── pertarungan/
+│ ├── Dungeon.java
+│ └── Musuh.java
+├── user/
+│ ├── hadiah/
+│ │ ├── Hadiah.java
+│ │ ├── HadiahHP.java
+│ │ └── HadiahSP.java
+│ ├── skill/
+│ │ ├── Air.java
+│ │ ├── Api.java
+│ │ ├── Skill.java
+│ │ ├── SkillFactory.java
+│ │ ├── Tanah.java
+│ │ └── UsableSkill.java
+│ ├── Persona.java
+│ └── User.java
+├── Main.java
+└── README.md
 
 ## Penerapan Prinsip OOP
 
