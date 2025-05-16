@@ -144,30 +144,33 @@ Package pertarungan:
 
 5.Saat dijalankan, Anda akan diminta:
 
-  Memilih apakah ingin bermain atau tidak
+  - Memilih apakah ingin bermain atau tidak
 
-  Memasukkan data pemain seperti nama user dan nama persona
+  - Memasukkan data pemain seperti nama user dan nama persona
 
-  Memilih skill (Api, Air, atau Tanah)
+  - Memilih skill (Api, Air, atau Tanah)
 
-  Melakukan aksi (bertarung, melihat profil, melihat riwayat hadiah, atau keluar)
+  - Melakukan aksi (bertarung, melihat profil, melihat riwayat hadiah, atau keluar)
 
 Hadiah setelah pertarungan: tambahan HP (nyawa) atau SP (kekuatan persona).
 Selamat bermain dan semoga berhasil mengalahkan musuh-musuh di dalam game!
 
 
-👥 Pembagian Tugas Per Anggota
+## 👥 Pembagian Tugas Per Anggota
 
 • YUD BRYAWAN (H071241063)
+
 Bertugas mengatur bagaimana pemain berinteraksi dengan permainan secara keseluruhan. Membuat kelas User untuk menyimpan informasi pemain seperti nama, karakter, hadiah yang pernah didapat, dan skill yang digunakan. Selain itu, membuat kelas Main yang menjadi pusat jalannya permainan. Di kelas ini, permainan dimulai, input dari pemain diproses, dan hasilnya ditampilkan dengan jelas ke layar.
 
 • MUHAMMAD ARLIS (H071241047)
+
 Bertanggung jawab pada bagian pertarungan dalam permainan. Mengembangkan logika dan kelas-kelas yang mengatur dungeon sebagai tempat pertarungan dan musuh yang dihadapi pemain. Meskipun tidak semua file ditampilkan, pemanggilan kelas Dungeon di kelas Main menunjukkan bahwa bagian ini merupakan inti dari sistem pertarungan.
 
 • DIESTY MENDILA TAPPO (H071241077)
+
 Mengembangkan karakter pemain dan skill yang dimiliki. Membuat kelas Persona yang berisi data seperti nama, HP, SP, dan skill. Juga membuat kelas abstrak Skill sebagai dasar skill lain, serta skill konkret seperti Api dan Tanah. Untuk memudahkan pembuatan skill, juga dibuat kelas SkillFactory.
 
 • SUCI SRI AULIA (H071241067)
+
 Bertugas membuat sistem hadiah dalam permainan. Membuat kelas Hadiah sebagai dasar untuk jenis hadiah, lalu mengembangkan hadiah seperti HadiahHP dan HadiahSP yang menambah HP atau SP pemain. Sistem ini membuat hadiah dalam permainan jadi lebih bervariasi dan berguna.
-![image](https://github.com/user-attachments/assets/906ef4c9-22fe-4e55-893d-88f2720773de)
 
