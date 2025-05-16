@@ -198,4 +198,38 @@ public class Main {
         }
     }
 
+    private static void tampilkanProfil(User user) {
+        System.out.println("\n" + WAVE_LINE);
+        System.out.println(ANSI_PURPLE + ANSI_BOLD + "                PROFIL USER                " + ANSI_RESET);
+        System.out.println(WAVE_LINE);
+        printUserInfo(user);
+        System.out.println(WAVE_LINE + "\n");
+    }
+
+    private static void bertarung(User user) {
+        System.out.println("\n" + WAVE_LINE);
+        System.out.println(ANSI_BOLD + "Pertarungan dimulai..." + ANSI_RESET);
+
+        Dungeon dungeon = new Dungeon(user);
+        dungeon.mulaiDungeon();
+
+        user = dungeon.getUser();
+
+        System.out.println("\nSetelah pertarungan, profil Anda:");
+        printUserInfo(user);
+        System.out.println(WAVE_LINE + "\n");
+    }
+
+    private static void tampilkanRiwayat(User user) {
+        System.out.println("\n" + DOTTED_LINE);
+        System.out.println(ANSI_CYAN + "Riwayat Hadiah yang sudah Anda dapatkan:" + ANSI_RESET);
+        user.tampilkanRiwayatHadiah();
+        System.out.println(DOTTED_LINE + "\n");
+    }
+
+    private static void printErrorMessage(String message) {
+        System.out.println(ANSI_RED + message + ANSI_RESET);
+    }
+}
+
 
