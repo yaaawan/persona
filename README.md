@@ -20,30 +20,6 @@ Menampilkan informasi dasar pengguna seperti nama pengguna, nama persona, skill 
 ### 4. Opsi Keluar Permainan
 Fitur ini memungkinkan pengguna keluar dari permainan dengan aman. Sistem akan menampilkan pesan otomatis saat pengguna memilih keluar dari permainan.
 
----
-
-## Struktur Folder
-
-PERSONA/
-├── pertarungan/
-│ ├── Dungeon.java
-│ └── Musuh.java
-├── user/
-│ ├── hadiah/
-│ │ ├── Hadiah.java
-│ │ ├── HadiahHP.java
-│ │ └── HadiahSP.java
-│ ├── skill/
-│ │ ├── Air.java
-│ │ ├── Api.java
-│ │ ├── Skill.java
-│ │ ├── SkillFactory.java
-│ │ ├── Tanah.java
-│ │ └── UsableSkill.java
-│ ├── Persona.java
-│ └── User.java
-├── Main.java
-└── README.md
 
 ## Penerapan Prinsip OOP
 
